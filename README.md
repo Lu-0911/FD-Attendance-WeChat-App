@@ -88,8 +88,9 @@ pip install -r requirements.txt
 
 ### 数据库初始化配置
 
-构建数据库见sql文件 `database.sql`，文件中已包含数据库及表的创建，包含测试数据插入。
+构建数据库见sql文件 `database.sql`，文件中包含数据库及表的创建，以及测试数据插入。
 创建数据库attendtance_system,在MySQL workbench直接运行 `database.sql` 文件即可。
+（数据库的测试数据已通过mysqldump命令导出在`data.sql`文件中。）
 
 ### 配置数据库连接URI
 
