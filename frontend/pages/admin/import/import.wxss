@@ -1,0 +1,99 @@
+.container {
+  padding: 20rpx;
+}
+
+.header {
+  margin-bottom: 30rpx;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.content {
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 40rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0,0,0,0.1);
+}
+
+.form-item {
+  margin-bottom: 30rpx;
+}
+
+.label {
+  display: block;
+  font-size: 32rpx;
+  color: #555;
+  margin-bottom: 10rpx;
+}
+
+.picker {
+  padding: 20rpx;
+  background-color: #f8f8f8;
+  border-radius: 8rpx;
+}
+
+.file-section {
+  margin: 40rpx 0;
+}
+
+
+.template-section {
+  margin-bottom: 40rpx;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.btn {
+  padding: 20rpx;
+  font-size: 32rpx;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.result-section {
+  margin-top: 40rpx;
+  padding: 20rpx;
+  background-color: #f8f8f8;
+  border-radius: 8rpx;
+}
+
+.result-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.result-message {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+}
+
+.error-list {
+  margin-top: 20rpx;
+}
+
+.error-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.error-item {
+  font-size: 26rpx;
+  color: #dc3545;
+  margin-bottom: 8rpx;
+  padding-left: 20rpx;
+} 

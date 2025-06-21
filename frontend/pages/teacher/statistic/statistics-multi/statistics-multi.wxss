@@ -1,0 +1,89 @@
+.container { 
+    padding: 20rpx;
+}
+
+.header { 
+    margin-bottom: 30rpx;
+}
+
+.title { 
+    font-size: 48rpx; 
+    font-weight: bold; 
+    color: #333;
+}
+
+.subtitle { 
+    font-size: 36rpx; 
+    padding: 20rpx; 
+    color: #666; 
+    margin-top: 20rpx; 
+    display: block;
+}
+
+.form-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.label {
+  width: 200rpx;
+  font-size: 36rpx;
+  color: #555;
+}
+
+.picker {
+  width: 300rpx;
+  font-size: 36rpx;
+  padding: 20rpx;
+  background-color:rgb(240, 240, 240);
+  border-radius: 8rpx;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.query-button { 
+    background-color: #007bff; 
+    color: #fff; 
+    border-radius: 10rpx; 
+    padding: 20rpx; 
+    font-size: 36rpx; 
+    text-align: center; 
+    margin-top: 40rpx;
+}
+
+.stat-title { 
+    font-size: 36rpx; 
+    font-weight: bold; 
+    margin: 30rpx 0 20rpx 0;
+}
+
+.stat-row { 
+    margin-bottom: 30rpx;
+}
+
+.stat-label { 
+    font-size: 28rpx;
+    margin-bottom: 8rpx;
+}
+
+.stat-bar { 
+    display: flex; 
+    height: 36rpx; 
+    border-radius: 18rpx; 
+    overflow: hidden; 
+    font-size: 22rpx; 
+    text-align: center;
+}
+
+.bar-attend { 
+    background: #43a047; color: #fff; line-height: 36rpx;
+}
+
+.bar-leave { 
+    background: #fbc02d; color: #fff; line-height: 36rpx;
+}
+
+.bar-absent { 
+    background: #e53935; color: #fff; line-height: 36rpx;
+}

@@ -1,0 +1,29 @@
+{
+    "pages": [
+      "pages/login/login",
+      "pages/student/home/home",
+      "pages/student/schedule/schedule",
+      "pages/student/attendance/attendance",
+      "pages/teacher/home/home",
+      "pages/teacher/publishCheckin/publishCheckin",
+      "pages/teacher/statistic/statistic",
+      "pages/teacher/statistic/statistics-multi/statistics-multi",
+      "pages/admin/home/home",
+      "pages/admin/import/import",
+      "pages/admin/export/export",
+      "pages/admin/edit/edit",
+      "pages/admin/delete/delete",
+      "pages/common/info/info",
+      "pages/common/settings/settings"
+    ],
+    "window": {
+      "navigationBarBackgroundColor": "#ffffff",
+      "navigationBarTextStyle": "black",
+      "navigationBarTitleText": "FD考勤系统",
+      "backgroundColor": "#f7f7f7",
+      "backgroundTextStyle": "light"
+    },
+    "lazyCodeLoading": "requiredComponents",
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

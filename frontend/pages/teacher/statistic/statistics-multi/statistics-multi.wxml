@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="header">
+    <text class="title">多维度考勤统计</text>
+    <text class="subtitle">{{course_name}}</text>
+  </view>
+  <view class="search-section">
+  <view class="form-item">
+    <text class="label">统计维度:</text>
+    <picker range="{{dimlist}}" value="{{pickdim}}" bindchange="choosedim">
+      <view class="picker">{{dimlist[pickdim]}}</view>      
+    </picker>
+  </view>
+  </view>
+  <button class="query-button" bindtap="searchInfo">查询</button>
+
+  <view wx:if="{{showSta}}">
+    <view class="stat-title">出勤情况（绿色出勤，黄色请假，红色缺勤）</view>
+    <view wx:for="{{majorList}}" wx:key="index" class="stat-row">
+      <view class="stat-label">{{item}}</view>
+      <view class="stat-bar">
+        <view class="bar-attend" style="width:{{rate_attend[index]}}%;">{{rate_attend[index]}}%</view>
+        <view class="bar-leave" style="width:{{rate_leave[index]}}%;">{{rate_leave[index]}}%</view>
+        <view class="bar-absent" style="width:{{rate_not[index]}}%;">{{rate_not[index]}}%</view>
+      </view>
+    </view>
+  </view>
+</view>

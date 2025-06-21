@@ -1,0 +1,20 @@
+<view class="container">
+  <view class="search-section">
+    <input class="search-input" placeholder="请输入课程、学生或老师ID" bindinput="onIDInput" />
+    <button class="search-button" bindtap="searchInfo">搜索</button>
+  </view>
+
+  <view class="info-display" wx:if="{{info}}">
+    <text class="section-title">当前信息:</text>
+    <view class="info-item" wx:for="{{info}}" wx:key="key">
+      <text class="info-label">{{item.label}}:</text>
+      <input class="info-value-input" value="{{item.value}}" data-key="{{item.key}}" bindinput="onInfoInputChange" />
+    </view>
+    <button class="submit-button" bindtap="submitModification">提交修改</button>
+    <button class="delete-button" bindtap="deleteCurrentInfo">删除相关数据</button>
+  </view>
+
+  <view class="no-info" wx:if="{{!info && searched}}">
+    <text>未找到相关信息。</text>
+  </view>
+</view> 

@@ -1,0 +1,16 @@
+<view class="container">
+  <view class="header">
+    <text class="title">设置</text>
+  </view>
+
+  <!-- 修改密码区域 -->
+  <view class="section">
+    <text class="section-title">修改密码</text>
+    <input password="{{true}}" placeholder="请输入原密码" bindinput="onOldPasswordInput" class="input"/>
+    <input password="{{true}}" placeholder="请输入新密码" bindinput="onNewPasswordInput" class="input"/>
+    <button bindtap="onChangePassword" class="btn">确认修改</button>
+  </view>
+  
+  <button class="logout-button" bindtap="onLogout">退出登录</button>
+  
+</view>

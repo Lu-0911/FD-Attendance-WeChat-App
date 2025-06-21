@@ -1,0 +1,90 @@
+<wxs module="utils">
+var formatCheckState = function(state) {
+  var stateMap = {
+    'checked': '出勤',
+    'leave': '请假',
+    'absent': '缺勤'
+  };
+  return stateMap[state] || state;
+};
+module.exports.formatCheckState = formatCheckState;
+</wxs>
+
+
+<view class="container">
+  <view class="header">
+    <text class="title">查询考勤</text>
+  </view>
+
+  <view class="search-section">
+    <view class="form-item">
+      <text class="label">选择课程:</text>
+      <picker bindchange="bindCourseChange" value="{{courseIndex}}" range="{{courses}}" range-key="course_name">
+        <view class="picker">{{courses[courseIndex].course_name}}</view>
+      </picker>
+    </view>
+    <view class="form-item">
+      <text class="label">选择日期:</text>
+      <picker bindchange="bindDateChange" range="{{availableDates}}" value="{{dateIndex}}">
+        <view class="picker">{{queryDate}}</view>
+      </picker>
+    </view>
+    <button class="query-button" bindtap="queryCheckinRecords">查询</button>
+    <button class="query-button" bindtap="exportCheckinRecords">导出Excel</button>
+    <button class="query-button" bindtap="registerLeave">登记请假</button>
+    <button class="query-button" bindtap="queryCheckinStatistics">统计</button>
+  </view>
+
+
+  <!-- 签到记录弹出框 -->
+  <view wx:if="{{showDetail}}" class="modal">
+    <view class="modal-content" catchtap="">
+      <view class="modal-header">
+        <text class="modal-title">{{CourseName}}&{{queryDate}}</text>
+        <text class="close" bindtap="onCloseModal">×</text>
+      </view>
+      <scroll-view scroll-y style="max-height: 400px">
+        <block wx:for="{{detailList}}" wx:key="student_id">
+          <view class="record-item">
+            <text>{{item.student_name}}</text>
+            <text>{{item.student_id}}</text>
+            <text wx:if="{{queryDate === '全部日期'}}" class="present">
+              {{item.actual_count}}/{{item.need_count}}
+            </text>
+            <text wx:else class="{{item.status === 'checked' ? 'present' : (item.status === 'leave' ? 'leave' : 'absent')}}">
+              {{utils.formatCheckState(item.status)}}
+            </text>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+
+  <!-- 学生选择请假弹窗 -->
+  <view wx:if="{{showSelectionModal}}" class="modal student-selection-modal">
+    <view class="modal-content" catchtap="">
+      <view class="modal-header">
+        <text class="modal-title">选择请假学生</text>
+        <text class="close" bindtap="cancelStudentSelection">×</text>
+      </view>
+      <scroll-view scroll-y class="modal-body">
+        <view wx:if="{{absentStudents.length === 0}}" class="no-students-tip">
+          <text>暂无缺勤学生可选。</text>
+        </view>
+        <block wx:for="{{absentStudents}}" wx:key="student_id">
+          <view class="student-item" catchtap="toggleStudentSelection" data-index="{{index}}" data-studentid="{{item.student_id}}">
+            <checkbox value="{{item.student_id}}" checked="{{item.checked}}" catchtap=""/>
+            <text class="student-name">{{item.student_name}}</text>
+            <text class="student-id">({{item.student_id}})</text>
+          </view>
+        </block>
+      </scroll-view>
+      <view class="modal-footer">
+        <button class="modal-button cancel-button" bindtap="cancelStudentSelection">取消</button>
+        <button class="modal-button confirm-button" bindtap="confirmRegisterLeave">确定</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+

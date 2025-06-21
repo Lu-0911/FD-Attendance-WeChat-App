@@ -1,0 +1,43 @@
+.container {
+  padding: 20rpx;
+}
+
+.section {
+  margin-bottom: 30rpx;
+  background-color: #fff;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+  display: block; /* Ensures title takes full width */
+}
+
+.picker {
+  border: 1px solid #eee;
+  padding: 20rpx;
+  border-radius: 6rpx;
+  font-size: 30rpx;
+  color: #666;
+  background-color: #f9f9f9;
+}
+
+.export-button {
+  margin-top: 50rpx;
+  background-color: #007bff;
+  color: white;
+  font-size: 34rpx;
+  padding: 20rpx 0;
+  border-radius: 10rpx;
+  text-align: center;
+  width: 100%;
+}
+
+.export-button:active {
+  background-color: #0056b3;
+} 

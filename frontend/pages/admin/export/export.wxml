@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="section">
+    <text class="section-title">选择教师：</text>
+    <picker mode="selector" range="{{teachers}}" range-key="name" bindchange="bindTeacherPickerChange" value="{{teacherPickerIndex}}">
+      <view class="picker">{{teachers[teacherPickerIndex].name}}</view>
+    </picker>
+  </view>
+
+  <view class="section">
+    <text class="section-title">选择课程：</text>
+    <picker mode="selector" range="{{courses}}" range-key="course_name" bindchange="bindCoursePickerChange" value="{{coursePickerIndex}}">
+      <view class="picker">{{courses[coursePickerIndex].course_name}}</view>
+    </picker>
+  </view>
+
+  <view class="section">
+    <text class="section-title">选择日期：</text>
+    <picker mode="selector" range="{{dates}}" bindchange="bindDatePickerChange" value="{{datePickerIndex}}">
+      <view class="picker">{{dates[datePickerIndex] === 'ALL' ? '所有日期' : dates[datePickerIndex]}}</view>
+    </picker>
+  </view>
+
+  <button class="export-button" bindtap="exportData">导出考勤数据</button>
+</view> 

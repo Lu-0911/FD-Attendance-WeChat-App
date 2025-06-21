@@ -1,0 +1,59 @@
+<wxs module="utils">
+var formatCheckState = function(state) {
+  var stateMap = {
+    'checked': '出勤',
+    'leave': '请假',
+    'absent': '缺勤'
+  };
+  return stateMap[state] || state;
+};
+
+var formatLocation = function(state) {
+  var stateMap = {
+    'true': '定位',
+    'false': '/'
+  };
+  return stateMap[state] || state;
+};
+
+module.exports.formatCheckState = formatCheckState;
+module.exports.formatLocation = formatLocation;
+</wxs>
+
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="title">考勤情况</view>
+  <!-- 课程列表 -->
+  <view class="course-list">
+    <block wx:for="{{attendanceList}}" wx:key="course_id">
+      <view class="course-item" bindtap="onCourseTap" data-course_id="{{item.course_id}}">
+        <view class="course-name">{{item.course_name}}</view>
+        <view class="stats">
+          <text>应签：{{item.need_count}}</text>
+          <text>实签：{{item.actual_count}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 签到记录弹出框 -->
+  <view wx:if="{{showDetail}}" class="modal">
+    <view class="modal-content">
+      <view class="modal-header">
+        <text class="modal-title">{{selectedCourseName}} - 签到记录</text>
+        <text class="close" bindtap="onCloseModal">×</text>
+      </view>
+      <scroll-view scroll-y style="max-height: 400px">
+        <block wx:for="{{detailList}}" wx:key="check_time">
+          <view class="record-item">
+            <text>{{item.check_time}}</text>
+            <text>{{utils.formatLocation(item.location)}}</text>
+            <text class="{{item.check_state === 'checked' ? 'present' : (item.check_state === 'leave' ? 'leave' : 'absent')}}">
+              {{utils.formatCheckState(item.check_state)}}
+            </text>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+</view>

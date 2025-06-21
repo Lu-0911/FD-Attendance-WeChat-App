@@ -1,0 +1,54 @@
+/**
+ * 全局样式文件，所有页面共享，可用于设置统一字体、颜色等
+ */
+
+/* 字体设置 */
+page {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* 统一按钮样式 */
+.button-primary {
+  background-color: #1890ff;
+  color: #fff;
+  border-radius: 6px;
+  padding: 12px;
+  text-align: center;
+}
+
+/* 通用容器样式 */
+.container {
+  padding: 20rpx;
+}
+
+/* 标题统一样式 */
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16rpx;
+  color: #222;
+}
+
+/* 分割线 */
+.divider {
+  border-bottom: 1px solid #e0e0e0;
+  margin: 20rpx 0;
+}
+
+/* 输入框通用样式 */
+.input-box {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10rpx 20rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+/* 页面统一边距 */
+.page-padding {
+  padding: 40rpx 30rpx;
+}

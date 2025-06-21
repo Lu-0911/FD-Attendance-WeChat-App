@@ -1,0 +1,30 @@
+.container {
+  padding: 60rpx;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.info-card {
+  background-color: #eef5ff;
+  padding: 40rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0,0,0,0.1);
+}
+
+.info-item {
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+}
+
+.label {
+  font-weight: bold;
+  margin-right: 10rpx;
+}

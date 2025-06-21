@@ -1,0 +1,42 @@
+<view class="container">
+  <view class="header">
+    <text class="title">发布签到</text>
+  </view>
+
+  <view class="form-section">
+    <view class="form-item">
+      <text class="label">选择课程:</text>
+      <picker mode="selector" range="{{courses}}" range-key="course_name" value="{{courseIndex}}" bindchange="bindCourseChange">
+        <view class="picker">{{courses[courseIndex].course_name}}</view>
+      </picker>
+    </view>
+    
+    <view class="form-item">
+      <text class="label">开始时间:</text>
+      <picker mode="time" value="{{startTime}}" bindchange="bindStartTimeChange">
+        <view class="picker">{{startTime}}</view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <text class="label">签到时长:</text>
+      <input type="number" bindinput="bindDurationInput" value="{{duration}}"/>
+    </view>
+    
+    
+    <view class="form-item">
+      <text class="label">需要定位:</text>
+      <picker mode="selector" range="{{locationOptions}}" range-key="name" value="{{locationIndex}}" bindchange="bindLocationChange">
+        <view class="picker">{{locationOptions[locationIndex].name}}</view>
+      </picker>
+    </view>
+    
+    <button class="publish-button" bindtap="publishCheckin">发布签到</button>
+  </view>
+
+  <view wx:if="{{qrCodeUrl}}" class="qr-section">
+    <text class="qr-title">签到二维码</text>
+    <image src="{{qrCodeUrl}}" class="qr-image" mode="widthFix" bindtap="previewQRCode"></image>
+    <text class="qr-info">点击二维码可放大查看</text>
+  </view>
+</view>

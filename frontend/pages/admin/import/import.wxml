@@ -1,0 +1,34 @@
+<view class="container">
+  <view class="header">
+    <text class="title">批量导入</text>
+  </view>
+
+  <view class="content">
+    <view class="form-item">
+      <text class="label">选择导入类型：</text>
+      <picker bindchange="bindTypeChange" value="{{importType}}" range="{{importTypes}}" range-key="label">
+        <view class="picker">{{importTypes[importTypeIndex].label}}</view>
+      </picker>
+    </view>
+
+    <view class="template-section">
+      <button class="btn btn-secondary" bindtap="downloadTemplate">下载导入模板</button>
+    </view>
+
+    <view class="file-section">
+      <button class="btn" bindtap="chooseFile">选择Excel文件</button>
+      <text wx:if="{{filePath}}">已选择文件</text>
+    </view>
+
+    <button class="btn btn-primary" bindtap="uploadFile" loading="{{uploading}}">开始导入</button>
+
+    <view class="result-section" wx:if="{{uploadResult}}">
+      <view class="result-title">导入结果</view>
+      <view class="result-message">{{uploadResult.message}}</view>
+      <view class="error-list" wx:if="{{uploadResult.errors}}">
+        <view class="error-title">错误详情：</view>
+        <view class="error-item" wx:for="{{uploadResult.errors}}" wx:key="index">{{item}}</view>
+      </view>
+    </view>
+  </view>
+</view> 

@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="header">
+    <text class="title">{{isStudent ? '学生信息' : '教师信息'}}</text> <!-- 动态标题 -->
+  </view>
+
+  <view class="info-card">
+
+    <block wx:if="{{isStudent}}"> <!-- 学生信息 -->
+      <view class="info-item"><text class="label">姓名：</text>{{userInfo.name}}</view>
+      <view class="info-item"><text class="label">年级：</text>{{userInfo.grade}}</view>
+      <view class="info-item"><text class="label">学号：</text>{{userInfo.student_id}}</view>
+      <view class="info-item"><text class="label">性别：</text>{{userInfo.gender}}</view>
+      <view class="info-item"><text class="label">院系：</text>{{userInfo.department}}</view>
+      <view class="info-item"><text class="label">专业：</text>{{userInfo.major}}</view>
+      <view class="info-item"><text class="label">出生日期：</text>{{userInfo.birthday}}</view>
+    </block>
+
+    <block wx:elif="{{isTeacher}}"> <!-- 教师信息 -->
+      <view class="info-item"><text class="label">姓名：</text>{{userInfo.name}}</view>
+      <view class="info-item"><text class="label">工号：</text>{{userInfo.teacher_id}}</view>
+      <view class="info-item"><text class="label">性别：</text>{{userInfo.gender}}</view>
+      <view class="info-item"><text class="label">职称：</text>{{userInfo.title}}</view>
+      <view class="info-item"><text class="label">院系：</text>{{userInfo.department}}</view>
+    </block>
+
+  </view>
+</view>

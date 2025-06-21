@@ -1,0 +1,41 @@
+<view class="container">
+  <view class="title">我的课表</view>
+  <!-- 课程表 -->
+  <scroll-view scroll-x="true" class="table-scroll">
+    <view class="table">
+      <view class="table-header">
+        <view class="time-cell">时间</view>
+        <block wx:for="{{weekDays}}" wx:key="index">
+          <view class="day-cell">{{item}}</view>
+        </block>
+      </view>
+
+      <block wx:for="{{timeSlots}}" wx:key="index">
+        <view class="table-row">
+          <view class="time-cell">{{item}}</view>
+          <block wx:for="{{weekCourses[index]}}" wx:key="subindex">
+            <view class="course-cell {{item ? 'has-course' : ''}}" bindtap="showCourseDetail" data-course="{{item}}">
+              <text wx:if="{{item}}">{{item.course_name}}\n{{item.class_location}}</text>
+            </view>
+          </block>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+
+  <!-- 课程详情弹窗 -->
+  <view wx:if="{{showDetail}}" class="modal-mask">
+    <view class="modal">
+      <text class="modal-title">课程信息</text>
+      <view class="modal-content">
+        <text>课程：{{currentCourse.course_name}}</text>
+        <text>教师：{{currentCourse.teacher_name}}</text>
+        <text>时间：{{currentCourse.class_time}}</text>
+        <text>地点：{{currentCourse.class_location}}</text>
+        <text>学分：{{currentCourse.credit}}</text>
+        <text>院系：{{currentCourse.department}}</text>
+      </view>
+      <button bindtap="closeModal">关闭</button>
+    </view>
+  </view>
+</view>
