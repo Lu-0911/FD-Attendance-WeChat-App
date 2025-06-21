@@ -1,4 +1,4 @@
-# FD-Attendance-WeChat-App
+# FD-Attendance-WeChat-App FD微信考勤小程序
 ## 1.文件目录结构
 
 ```
